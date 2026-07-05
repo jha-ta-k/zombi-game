@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Traffic Merge</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="game-container">
+  <div id="rotate-overlay" class="hidden">
+    <div class="rotate-icon"></div>
+    <p>Please rotate your device</p>
+    <p class="rotate-sub">Landscape mode required</p>
+  </div>
+  <canvas id="game-canvas"></canvas>
+  <div id="ui-overlay">
+    <div id="main-menu" class="screen">
+      <h1 class="game-title">TRAFFIC<br>MERGE</h1>
+      <p class="subtitle">Merge safely. Survive longer.</p>
+      <button class="btn btn-play" data-action="play">PLAY</button>
+      <div class="menu-row">
+        <button class="btn btn-small" data-action="highscores">BEST</button>
+        <button class="btn btn-small" data-action="settings">SOUND</button>
+        <button class="btn btn-small" data-action="credits">INFO</button>
+      </div>
+      <div class="coin-display-menu">
+        <span class="coin-icon">C</span>
+        <span id="menu-coins">0</span>
+      </div>
+    </div>
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <div class="score-display">SCORE <span id="score">0</span></div>
+        <div id="combo-display" class="hidden">x<span id="combo">0</span></div>
+      </div>
+      <div class="hud-right">
+        <div class="coin-display">
+          <span class="coin-icon-small">C</span>
+          <span id="hud-coins">0</span>
+        </div>
+        <button class="btn-icon" id="pause-btn"><span>II</span></button>
+      </div>
+    </div>
+    <div id="pause-menu" class="screen hidden">
+      <div class="overlay-bg"></div>
+      <div class="menu-box">
+        <h2>PAUSED</h2>
+        <button class="btn" data-action="resume">RESUME</button>
+        <button class="btn" data-action="restart">RESTART</button>
+        <button class="btn" data-action="menu">MAIN MENU</button>
+        <button class="btn btn-small" data-action="pause-sound">SOUND: ON</button>
+      </div>
+    </div>
+    <div id="gameover-screen" class="screen hidden">
+      <div class="overlay-bg"></div>
+      <div class="menu-box">
+        <h2 class="go-title">GAME OVER</h2>
+        <div class="score-summary">
+          <div class="ss-row"><span>SCORE</span><span id="final-score">0</span></div>
+          <div class="ss-row"><span>BEST</span><span id="best-score">0</span></div>
+          <div class="ss-row"><span>COINS EARNED</span><span id="coins-earned">0</span></div>
+        </div>
+        <button class="btn" data-action="restart">PLAY AGAIN</button>
+        <button class="btn" data-action="menu">MAIN MENU</button>
+      </div>
+    </div>
+    <div id="settings-screen" class="screen hidden">
+      <div class="overlay-bg"></div>
+      <div class="menu-box">
+        <h2>SETTINGS</h2>
+        <div class="setting-row"><span>Sound Effects</span><button class="btn-toggle" data-setting="sfx">ON</button></div>
+        <div class="setting-row"><span>Music</span><button class="btn-toggle" data-setting="music">ON</button></div>
+        <button class="btn" data-action="settings-close">BACK</button>
+      </div>
+    </div>
+    <div id="credits-screen" class="screen hidden">
+      <div class="overlay-bg"></div>
+      <div class="menu-box">
+        <h2>CREDITS</h2>
+        <p>Traffic Merge v1.0</p>
+        <p>Created as an original game.</p>
+        <p>All assets and code are original.</p>
+        <p class="credit-small">Inspired by merge-style traffic games.</p>
+        <button class="btn" data-action="credits-close">BACK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/config.js"></script>
+<script src="js/save.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/entities.js"></script>
+<script src="js/highway.js"></script>
+<script src="js/input.js"></script>
+<script src="js/renderer.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
